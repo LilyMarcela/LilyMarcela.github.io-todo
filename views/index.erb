@@ -1,0 +1,22 @@
+
+  <ul class="tasks-container">
+    <% @tasks.each do |tarea|  %>
+      <li <%= tarea["done"] == true ? 'class="done"' : '' %>>
+        <span class="icon-action marks-done">
+          <form action="/update/<%= element["id"] %>" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <button type="submit">✓</button>
+          </form>
+        </span>
+        <strong><%= element["title"] %></strong>
+        <span class="icon-action delete-task">
+          <form action="/delete/<%= element["id"] %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit">✗</button>
+          </form>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+
+  <ul class="tasks-container tasks-done"></ul>

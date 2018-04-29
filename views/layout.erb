@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TODO Reto Sinatra</title>
+  <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+  <section class="container">
+    <div class="to-do-container">
+      <h1>TO-DO list with Sinatra</h1>
+      <h3>Never forget a task again</h3>
+      <form method="post" action="/create"  class="add-task">
+        <input type="text" name="name_task" class="add-task__name" placeholder="<%= @tasks.empty? ? 'Create your first task' : 'Create a task' %>" autofocus>
+        <button type="submit" class="add-task__submit"><span>+</span></button>
+      </form>
+      <%= yield %>
+    </div>
+  </section>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
